@@ -3,7 +3,7 @@ FactoryBot.define do
   sequence(:first_name) { |n| "#{n}ohn" }
   sequence(:last_name) { |n| "#{n}oe" }
 
-  factory :player do
+  factory :user do
     first_name
     last_name
   end

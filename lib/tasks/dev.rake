@@ -6,14 +6,14 @@ if Rails.env.development? || Rails.env.test?
     task prime: "db:setup" do
       include FactoryBot::Syntax::Methods
 
-      # Team & Player setup
-      captain = create(:player)
+      # Team & User setup
+      captain = create(:user)
       team = create(:team, captain: captain)
-      team.players << captain
+      team.users << captain
 
       4.times do
-        p = create(:player)
-        team.players << p
+        p = create(:user)
+        team.users << p
       end
 
       # Event Setup

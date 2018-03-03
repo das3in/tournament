@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe Player do
+describe User do
   context "validations" do
     it "should have valid valiations" do
       should validate_presence_of(:first_name)

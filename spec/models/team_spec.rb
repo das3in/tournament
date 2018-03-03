@@ -9,8 +9,8 @@ describe Team do
 
   context "associations" do
     it "should have valid associations" do
-      should belong_to(:captain).class_name("Player")
-      should have_many(:players)
+      should belong_to(:captain).class_name("User")
+      should have_many(:users)
       should have_many(:entries)
       should have_many(:tournaments)
     end

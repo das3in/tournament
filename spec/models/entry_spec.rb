@@ -14,7 +14,7 @@ describe Entry do
     it "should return all matches where the entry is the home or away team" do
       e = create(:event)
       d = create(:division)
-      p = create(:player)
+      p = create(:user)
       f = create(:field, event: e)
       t1 = create(:timeslot, field: f)
       t2 = create(:timeslot, field: f)

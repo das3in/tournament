@@ -1,7 +1,7 @@
 class Team < ApplicationRecord
-  belongs_to :captain, class_name: "Player"
-  has_many :player_teams
-  has_many :players, through: :player_teams
+  belongs_to :captain, class_name: "User"
+  has_many :user_teams
+  has_many :users, through: :user_teams
 
   has_many :entries
   has_many :tournaments, through: :entries
