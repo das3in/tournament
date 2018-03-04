@@ -9,11 +9,12 @@
       = link_to "WCPPL", root_path, class: "navbar-brand"
     #navbar.navbar-collapse.collapse
       %ul.nav.navbar-nav
-        %li
+        %li{class: "#{ 'active' if current_page? root_path}"}
           = link_to "Home", root_path
         - if user_signed_in?
-          %li
-            = link_to "Teams", teams_path
+          %li{class: "#{ 'active' if current_page? controller: :teams}"}
+            = link_to "Teams", teams_path, class: "#{ 'active' if current_page? controller: :teams}"
+
       %ul.nav.navbar-nav.navbar-right
         - if user_signed_in?
           %li
