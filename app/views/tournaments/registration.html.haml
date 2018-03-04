@@ -1,3 +1,20 @@
 %h1= @event.name
 
 %h2 Registering #{@team.name} for #{@tournament.division.name}
+
+= simple_form_for [@event, @tournament, @entry] do |f|
+  %table.table.table-striped.table-responsive
+    %thead
+      %th Player
+      %th Register?
+    %tbody
+      - @team.users.each do |user|
+        %tr
+          %td= user.full_name
+          %td
+            %input{type: "checkbox"}
+
+  .submission
+    = f.hidden_field :team_id, value: @team.id
+    = f.hidden_field :tournament_id, value: @tournament.id
+    = f.submit "Register", class: "btn btn-primary"

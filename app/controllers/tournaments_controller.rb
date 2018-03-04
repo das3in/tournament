@@ -9,7 +9,8 @@ class TournamentsController < ApplicationController
 
   def registration
     @event = Event.find(params[:event_id])
-    @tournament = @event.tournaments.includes(:entries).find(params[:id])
+    @tournament = @event.tournaments.find(params[:id])
     @team = Team.captain_teams(current_user).find(params[:team])
+    @entry = Entry.new
   end
 end

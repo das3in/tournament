@@ -7,6 +7,7 @@ describe Entry do
       should belong_to(:tournament)
       should have_many(:home_matches)
       should have_many(:away_matches)
+      should have_many(:users)
     end
   end
 

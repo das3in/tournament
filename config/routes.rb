@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   end
   resources :events, only: [:index, :show] do
     resources :tournaments, only: [:show] do
+      resources :entries
       member do
         get :registration
       end

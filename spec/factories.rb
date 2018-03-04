@@ -37,6 +37,11 @@ FactoryBot.define do
     # tournament
   end
 
+  factory :user_entry do
+    # user
+    # entry
+  end
+
   factory :match do
     # home_team
     # away_team

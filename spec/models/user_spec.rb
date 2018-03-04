@@ -11,6 +11,7 @@ describe User do
   context "associations" do
     it "should have valid associations" do
       should have_many(:teams)
+      should have_many(:entries)
     end
   end
 end
