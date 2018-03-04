@@ -1,0 +1,7 @@
+%h1= @team.name
+
+- if user_signed_in?
+  - if @team.users.exists?(current_user.id)
+    = link_to "Edit", edit_team_path(@team), class: "btn btn-default"
+  - else
+    = button_to "Join team", join_team_team_path(@team), class: "btn btn-default", data: { confirm: "Are you sure?"}

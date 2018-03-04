@@ -2,7 +2,21 @@
 
 = link_to "Create new team", new_team_path, class: "btn btn-primary"
 
-- if user_signed_in?
-  %ul
-    - @teams.each do |team|
-      %li= team.name
+.container
+  - if user_signed_in?
+    .col-md-6
+      %h2 My Teams
+      - if @teams.empty?
+        %p You don't belong to any teams
+      - else
+        %ul
+          - @teams.each do |team|
+            %li
+              = link_to team.name, team_path(team)
+  .col-md-6
+    %h2 Recruiting Teams
+    %ul
+      - @recruiting_teams.each do |team|
+        %li
+          = link_to team.name, team_path(team)
+
