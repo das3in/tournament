@@ -1,5 +1,8 @@
-%h1 My Teams
+%h1 Teams
 
-%ul
-  - @teams.each do |team|
-    %li= team.name
+= link_to "Create new team", new_team_path, class: "btn btn-primary"
+
+- if user_signed_in?
+  %ul
+    - @teams.each do |team|
+      %li= team.name
