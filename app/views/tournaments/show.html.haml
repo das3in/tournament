@@ -1,0 +1,14 @@
+%h1= @event.name
+
+%h2 Currently Registered
+
+%ul
+  - @tournament.entries.each do |entry|
+    %li= entry.team.name
+
+%h2 Register for #{@tournament.division.name}
+
+%ul
+  - @teams.each do |team|
+    %li
+      = link_to team.name, registration_event_tournament_path(@tournament, team: team.id)

@@ -1,1 +1,8 @@
 %h1= @event.name
+
+%h3 Divisions
+
+%ul
+  - @event.tournaments.each do |tournament|
+    %li
+      = link_to tournament.division.name, event_tournament_path(tournament)

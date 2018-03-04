@@ -6,7 +6,13 @@ Rails.application.routes.draw do
       post :join_team
     end
   end
-  resources :events, only: [:index, :show]
+  resources :events, only: [:index, :show] do
+    resources :tournaments, only: [:show] do
+      member do
+        get :registration
+      end
+    end
+  end
 
   root to: "events#index"
 end

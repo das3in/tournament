@@ -7,4 +7,6 @@ class Team < ApplicationRecord
   has_many :tournaments, through: :entries
 
   validates :name, presence: true
+
+  scope :captain_teams, -> (user) { where(captain: user)}
 end
